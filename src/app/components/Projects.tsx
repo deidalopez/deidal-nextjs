@@ -16,7 +16,7 @@ type ProjectType = {
 const projects: ProjectType[] = [
   {
     name: "Hearth Companion App",
-    image: `${config.basePath}/images/Hearth/HearthCompanionApp.png`,
+    image: `${config.basePath}/images/Hearth/HearthCompanionOverview.gif`,
     alt: "Hearth Companion App homescreen image",
     description:
       "Hearth Companion App: Companion app to the Hearth Display, a centralized touchscreen that makes family organization easier. Sync Calendars, create and customize Routines, use AI Hearth Helper, manage Stars and Rewards, and Meal Plan.",
@@ -38,7 +38,8 @@ const projects: ProjectType[] = [
     name: "Hearth Display",
     image: `${config.basePath}/images/Hearth/HearthDisplay.png`,
     alt: "Hearth Display",
-    description: "Hearth Display replaces traditional methods like whiteboards, wall calendars, chore charts with this smart display. With features like shared Calendars, Meal planning, Lists and to-dos, Routines, and Stars & Rewards.",
+    description:
+      "Hearth Display replaces traditional methods like whiteboards, wall calendars, chore charts with this smart display. With features like shared Calendars, Meal planning, Lists and to-dos, Routines, and Stars & Rewards.",
     techStack: [
       "React Native",
       "TypeScript",
@@ -49,7 +50,7 @@ const projects: ProjectType[] = [
       "Reanimated",
       "Lottie",
     ],
-    link: "https://hearthdisplay.com/products/hearth-display",
+    link: "https://hearthdisplay.com/pages/features",
   },
 
   {
