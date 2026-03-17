@@ -8,13 +8,17 @@ import ThemeSwitch from "./ThemeSwitch";
 
 const navComponents = [
   {
+    title: "Projects",
+    href: "#projects",
+  },
+  {
+    title: "Skills",
+    href: "#skills",
+  },
+  {
     title: "About",
     href: "#about",
     // href: "/aboutme", // TODO: complete aboutme page
-  },
-  {
-    title: "Projects",
-    href: "#projects",
   },
   {
     title: "Contact",
@@ -30,7 +34,10 @@ const NavBar = () => {
     <nav className="bg-accent fixed mx-auto  top-0 left-0 right-0 z-10 bg-opacity-100">
       <div className="flex flex-row lg:py-4 mx-auto px-8 p-2 justify-between">
         <>
-          <a href="/" className="hidden md:flex items-center font-bold text-lg text-textPrimary">
+          <a
+            href="/"
+            className="hidden md:flex items-center font-bold text-lg text-textPrimary"
+          >
             Deida Lopez
           </a>
           <div className="mobile-menu block md:hidden">

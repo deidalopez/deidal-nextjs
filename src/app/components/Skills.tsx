@@ -9,9 +9,15 @@ import {
   SiPostgresql,
   SiReactquery,
   SiExpo,
+  SiClaude,
 } from "react-icons/si";
 
-const skillsItems = [
+type SkillItemType = {
+  title: string;
+  icon?: React.JSX.Element;
+};
+
+const skillsItems: SkillItemType[] = [
   {
     title: "React Native",
     icon: <FaReact className="w-5 h-5" />,
@@ -59,15 +65,13 @@ const skillsItems = [
     title: "PostgreSQL",
     icon: <SiPostgresql className="w-5 h-5" />,
   },
+  {
+    title: "Claude Code",
+    icon: <SiClaude className="w-5 h-5" />,
+  },
 ];
 
-const SkillItem = ({
-  title,
-  icon,
-}: {
-  title: string;
-  icon: React.JSX.Element;
-}) => {
+const SkillItem = ({ title, icon }: SkillItemType) => {
   return (
     <div className="border p-2 rounded bg-accent flex flex-col justify-center items-center hover:scale-105 transition-transform duration-200">
       <div className="my-1">{icon}</div>
@@ -78,7 +82,7 @@ const SkillItem = ({
 
 const SkillsSection = () => {
   return (
-    <section className="pb-10">
+    <section id="skills" className="pb-10">
       <div>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10">
           Skills

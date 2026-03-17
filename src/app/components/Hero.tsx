@@ -11,7 +11,7 @@ const ActionButtons = () => (
       Contact Me
     </Link>
     <button className="px-6 py-4 rounded-full bg-transparent hover:scale-105 hover:duration-200  text-textPrimary border border-textPrimary mt-2 lg:mt-5">
-      <a href={`${config.basePath}/resume.pdf`}>View Resume</a>
+      <a href={`${config.basePath}/DeidaLopezResume2026.pdf`}>View Resume</a>
     </button>
   </div>
 );
