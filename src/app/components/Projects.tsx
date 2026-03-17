@@ -10,9 +10,48 @@ type ProjectType = {
   image: string;
   description: string;
   techStack?: string[];
+  link?: string;
 };
 
 const projects: ProjectType[] = [
+  {
+    name: "Hearth Companion App",
+    image: `${config.basePath}/images/Hearth/HearthCompanionApp.png`,
+    alt: "Hearth Companion App homescreen image",
+    description:
+      "Hearth Companion App: Companion app to the Hearth Display, a centralized touchscreen that makes family organization easier. Sync Calendars, create and customize Routines, use AI Hearth Helper, manage Stars and Rewards, and Meal Plan.",
+    techStack: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Tanstack Query",
+      "Axios",
+      "Zustand",
+      "React Navigation",
+      "Reanimated",
+      "Firebase",
+      "Python",
+    ],
+    link: "https://apps.apple.com/us/app/hearth-companion-app/id6498717775",
+  },
+  {
+    name: "Hearth Display",
+    image: `${config.basePath}/images/Hearth/HearthDisplay.png`,
+    alt: "Hearth Display",
+    description: "Hearth Display replaces traditional methods like whiteboards, wall calendars, chore charts with this smart display. With features like shared Calendars, Meal planning, Lists and to-dos, Routines, and Stars & Rewards.",
+    techStack: [
+      "React Native",
+      "TypeScript",
+      "Tanstack Query",
+      "Axios",
+      "Zustand",
+      "React Navigation",
+      "Reanimated",
+      "Lottie",
+    ],
+    link: "https://hearthdisplay.com/products/hearth-display",
+  },
+
   {
     name: "Care/of",
     image: `${config.basePath}/images/Careof/CO_gif.gif`,
@@ -86,10 +125,16 @@ const Project = ({ project }: { project: ProjectType }) => {
             </p>
           ))}
         </div>
-        {/* <p className="pt-13 text-sm  underline flex items-center">
-          Learn more
-          <FaChevronRight className="w-3 h-3 ml-1 " />
-        </p> */}
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-sm underline hover:opacity-70"
+          >
+            View more
+          </a>
+        )}
       </div>
     </div>
   );
