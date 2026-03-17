@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
-const linkedinLink = "https://www.linkedin.com/in/deida-lopez/";
+const linkedinLink = "https://www.linkedin.com/in/deidalopez/";
 const githubLink = "https://github.com/deidalopez";
 
 const Contact = () => {
@@ -19,9 +19,12 @@ const Contact = () => {
           I&apos;m looking for new opportunities and would love to hear from
           you!
         </p>
-        <p className="text-textPrimary mb-4 max-w-md">
-          Feel free to add me on LinkedIn or check out my GitHub.
-        </p>
+        <a
+          href="mailto:deida.tech@gmail.com"
+          className="text-textPrimary underline hover:opacity-70"
+        >
+          Shoot me an email
+        </a>
       </div>
       <div className="socials flex flex-row gap-5 self-end">
         <Link href={githubLink}>

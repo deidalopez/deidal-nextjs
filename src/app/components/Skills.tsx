@@ -5,6 +5,10 @@ import {
   SiTypescript,
   SiNextdotjs,
   SiExpress,
+  SiGraphql,
+  SiPostgresql,
+  SiReactquery,
+  SiExpo,
 } from "react-icons/si";
 
 const skillsItems = [
@@ -25,6 +29,17 @@ const skillsItems = [
     icon: <SiTypescript className="w-5 h-5" />,
   },
   {
+    title: "Tanstack Query",
+    icon: <SiReactquery className="w-5 h-5" />,
+  },
+  {
+    title: "Expo",
+    icon: <SiExpo className="w-5 h-5" />,
+  },
+  {
+    title: "Zustand",
+  },
+  {
     title: "Node.js",
     icon: <FaNodeJs className="w-5 h-5" />,
   },
@@ -38,11 +53,11 @@ const skillsItems = [
   },
   {
     title: "GraphQL",
-    icon: <SiNextdotjs className="w-5 h-5" />,
+    icon: <SiGraphql className="w-5 h-5" />,
   },
   {
     title: "PostgreSQL",
-    icon: <SiNextdotjs className="w-5 h-5" />,
+    icon: <SiPostgresql className="w-5 h-5" />,
   },
 ];
 
