@@ -31,12 +31,12 @@ const NavBar = () => {
   const close = () => setNavBarOpen(false);
 
   return (
-    <nav className="bg-accent fixed mx-auto  top-0 left-0 right-0 z-10 bg-opacity-100">
-      <div className="flex flex-row lg:py-4 mx-auto px-8 p-2 justify-between">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-forestGreen/90 backdrop-blur-sm border-b border-warmTan/20">
+      <div className="flex flex-row lg:py-4 mx-auto px-8 p-2 justify-between items-center">
         <>
           <a
             href="/"
-            className="hidden md:flex items-center font-bold text-lg text-textPrimary"
+            className="hidden md:flex items-center font-semibold text-lg text-cream tracking-wide"
           >
             Deida Lopez
           </a>
@@ -44,20 +44,20 @@ const NavBar = () => {
             {navBarOpen ? (
               <button
                 onClick={() => setNavBarOpen(false)}
-                className="flex items-center px-3 py-2 border rounded border-slate-200 hover:text-white hover:border-white"
+                className="flex items-center px-3 py-2 border rounded border-warmTan/40 text-cream hover:border-terracotta transition-colors duration-200"
               >
                 <IoClose className="h-6 w-6" />
               </button>
             ) : (
               <button
                 onClick={() => setNavBarOpen(true)}
-                className="flex items-center px-3 py-2 border rounded border-slate-200 hover:text-white hover:border-white"
+                className="flex items-center px-3 py-2 border rounded border-warmTan/40 text-cream hover:border-terracotta transition-colors duration-200"
               >
                 <IoMenuOutline className="h-6 w-6" />
               </button>
             )}
           </div>
-          <div className="menu hidden md:block " id="navbar">
+          <div className="menu hidden md:block" id="navbar">
             <ul className="flex justify-between p-4 md:p-0 md:flex-row md:space-x-8 mt-2">
               <>
                 {navComponents.map((item, index) => (

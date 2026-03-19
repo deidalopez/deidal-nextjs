@@ -10,6 +10,10 @@ const config: Config = {
 
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-outfit)", "system-ui", "sans-serif"],
+        heading: ["var(--font-crimson)", "Georgia", "serif"],
+      },
       colors: {
         // Semantic tokens (theme-aware via CSS variables)
         bkg: "var(--color-bkg)",
