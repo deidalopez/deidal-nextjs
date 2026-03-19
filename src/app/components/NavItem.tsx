@@ -13,7 +13,7 @@ const NavItem = ({
     <Link
       onClick={closeNavBar}
       href={href}
-      className="block py-2 pl-3 pr-4 text-textPrimary sm:text-xl rounded md:p-0"
+      className="nav-link block py-2 pl-3 pr-4 text-cream sm:text-base rounded md:p-0 relative transition-colors duration-200 hover:text-warmTan"
     >
       {title}
     </Link>
