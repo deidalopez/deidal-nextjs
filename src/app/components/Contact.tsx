@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const linkedinLink = "https://www.linkedin.com/in/deidalopez/";
@@ -11,7 +13,12 @@ const Contact = () => {
       id="contact"
       className="bg-forestGreen border-t border-warmTan/25 mx-auto md:px-8 py-10 px-8 flex justify-between flex-wrap gap-6"
     >
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" as const }}
+      >
         <h4 className="font-heading text-xl font-semibold text-cream mb-2">
           Get in touch!
         </h4>
@@ -25,15 +32,21 @@ const Contact = () => {
         >
           Shoot me an email →
         </a>
-      </div>
-      <div className="socials flex flex-row gap-5 self-end">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" as const, delay: 0.15 }}
+        className="socials flex flex-row gap-5 self-end"
+      >
         <Link href={githubLink} className="text-cream/60 hover:text-terracotta transition-colors duration-200">
           <FaGithub className="w-9 h-9" />
         </Link>
         <Link href={linkedinLink} className="text-cream/60 hover:text-terracotta transition-colors duration-200">
           <FaLinkedin className="w-9 h-9" />
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 };

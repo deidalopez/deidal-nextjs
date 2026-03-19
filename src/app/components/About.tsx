@@ -1,11 +1,19 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import ProfilePhoto from "./ProfilePhoto";
 
 const About = () => {
   return (
     <section id="about" className="text-textPrimary pb-16">
       <div className="flex flex-row flex-wrap gap-10">
-        <div className="flex-1 min-w-0">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: "easeOut" as const }}
+          className="flex-1 min-w-0"
+        >
           <h2 className="font-heading text-textPrimary font-bold mb-8">
             About Me
           </h2>
@@ -32,12 +40,18 @@ const About = () => {
               </span>
             </p>
           </div>
-        </div>
-        <div className="md:block hidden flex-shrink-0">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: "easeOut" as const, delay: 0.15 }}
+          className="md:block hidden flex-shrink-0"
+        >
           <div className="ring-2 ring-terracotta/40 ring-offset-4 ring-offset-bkg rounded-full">
             <ProfilePhoto />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

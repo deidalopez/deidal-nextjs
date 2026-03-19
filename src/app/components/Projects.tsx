@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 // import { FaChevronRight } from "react-icons/fa";
 import config from "../../../next.config";
 
@@ -107,9 +108,15 @@ const Card = ({ project }: { project: ProjectType }) => (
   </div>
 );
 
-const Project = ({ project, featured }: { project: ProjectType; featured?: boolean }) => {
+const Project = ({ project, featured, index }: { project: ProjectType; featured?: boolean; index: number }) => {
   return (
-    <div className={`relative bg-charcoal rounded-2xl flex flex-row mb-8 lg:mb-10 p-7 lg:p-9 shadow-lg border border-warmTan/25 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden ${featured ? "border-t-4 border-t-terracotta" : ""}`}>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, ease: "easeOut" as const, delay: index * 0.1 }}
+      className={`relative bg-charcoal rounded-2xl flex flex-row mb-8 lg:mb-10 p-7 lg:p-9 shadow-lg border border-warmTan/25 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden ${featured ? "border-t-4 border-t-terracotta" : ""}`}
+    >
       <div className="hidden sm:block p-3 flex-shrink-0">{Card({ project })}</div>
       <div className="pl-5 flex flex-col justify-between">
         <div>
@@ -120,9 +127,9 @@ const Project = ({ project, featured }: { project: ProjectType; featured?: boole
         </div>
         <div>
           <div className="flex flex-wrap gap-2 pt-2">
-            {project.techStack?.map((tech, index) => (
+            {project.techStack?.map((tech, i) => (
               <span
-                key={index}
+                key={i}
                 className="text-xs border border-warmTan/40 text-sage px-2 py-1 rounded-md tracking-wide"
               >
                 {tech}
@@ -141,19 +148,25 @@ const Project = ({ project, featured }: { project: ProjectType; featured?: boole
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const Projects = () => {
   return (
     <section id="projects" className="pb-16">
-      <h2 className="font-heading text-textPrimary font-bold mb-10">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, ease: "easeOut" as const }}
+        className="font-heading text-textPrimary font-bold mb-10"
+      >
         Projects
-      </h2>
+      </motion.h2>
       <div className="lg:mx-4">
         {projects.map((project, index) => (
-          <Project key={index} project={project} featured={index === 0} />
+          <Project key={index} project={project} featured={index === 0} index={index} />
         ))}
       </div>
     </section>

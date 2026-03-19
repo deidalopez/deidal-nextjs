@@ -42,3 +42,6 @@ to/*
 !to/*.js
 !to/*.ts
 public/_next-video
+
+# AI
+.claude

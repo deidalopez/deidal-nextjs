@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import {
   SiJavascript,
@@ -71,12 +73,18 @@ const skillsItems: SkillItemType[] = [
   },
 ];
 
-const SkillItem = ({ title, icon }: SkillItemType) => {
+const SkillItem = ({ title, icon, index }: SkillItemType & { index: number }) => {
   return (
-    <div className="border border-warmTan/35 p-3 rounded-xl bg-surface flex flex-col justify-center items-center gap-2 hover:border-terracotta hover:bg-charcoal/50 transition-all duration-200 cursor-default">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.35, ease: "easeOut" as const, delay: index * 0.05 }}
+      className="border border-warmTan/35 p-3 rounded-xl bg-surface flex flex-col justify-center items-center gap-2 hover:border-terracotta hover:bg-charcoal/50 transition-all duration-200 cursor-default"
+    >
       <div className="text-sage">{icon}</div>
       <h3 className="text-sm lg:text-base font-semibold tracking-wide text-textPrimary">{title}</h3>
-    </div>
+    </motion.div>
   );
 };
 
@@ -84,13 +92,19 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="pb-16">
       <div>
-        <h2 className="font-heading text-textPrimary font-bold mb-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeOut" as const }}
+          className="font-heading text-textPrimary font-bold mb-10"
+        >
           Skills
-        </h2>
+        </motion.h2>
       </div>
       <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 lg:mx-4">
-        {skillsItems.map((item) => (
-          <SkillItem key={item.title} title={item.title} icon={item.icon} />
+        {skillsItems.map((item, index) => (
+          <SkillItem key={item.title} title={item.title} icon={item.icon} index={index} />
         ))}
       </div>
     </section>
