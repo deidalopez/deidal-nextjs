@@ -3,33 +3,40 @@ import ProfilePhoto from "./ProfilePhoto";
 
 const About = () => {
   return (
-    <section id="about" className="text-textPrimary pb-10">
-      <div className="flex flex-row flex-wrap gap-4">
-        <div className="flex-1">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-textPrimary font-bold  mb-10 ">
+    <section id="about" className="text-textPrimary pb-16">
+      <div className="flex flex-row flex-wrap gap-10">
+        <div className="flex-1 min-w-0">
+          <h2 className="font-heading text-textPrimary font-bold mb-8">
             About Me
           </h2>
-          <div>
-            <p className="md:text-lg lg:text-2xl leading-relaxed my-4">
+          <div className="space-y-5 text-textPrimary/85 text-lg leading-relaxed">
+            <p>
               Hey there! My name is Deida (&lsquo;day-da&rsquo;) and I am a{" "}
-              <span className="font-bold md:text-lg lg:text-2xl">
+              <span className="font-semibold text-textPrimary">
                 Mobile & Frontend developer
               </span>{" "}
               who loves to create intuitive, delightful, user-centric
               applications. I&apos;ve built multiple apps with startups that
               users love to use!
-              <br />
-              <br /> I have experience as a Full Stack Developer, having
-              worked extensively with React, Node.js, GraphQL, Python, and PostgreSQL.
-              <br />
-              <br /> I&apos;m all about writing clean, well-documented code, and
+            </p>
+            <p>
+              I have experience as a Full Stack Developer, having worked
+              extensively with React, Node.js, GraphQL, Python, and PostgreSQL.
+            </p>
+            <p>
+              I&apos;m all about writing clean, well-documented code, and
               tracking metrics that matter, ensuring that the results we achieve
-              are as meaningful as they are impactful.
+              are as{" "}
+              <span className="font-semibold text-textPrimary">
+                meaningful as they are impactful.
+              </span>
             </p>
           </div>
         </div>
-        <div className="md:block hidden">
-          <ProfilePhoto />
+        <div className="md:block hidden flex-shrink-0">
+          <div className="ring-2 ring-terracotta/40 ring-offset-4 ring-offset-bkg rounded-full">
+            <ProfilePhoto />
+          </div>
         </div>
       </div>
     </section>

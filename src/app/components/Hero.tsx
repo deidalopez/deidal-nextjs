@@ -3,22 +3,25 @@ import Link from "next/link";
 import config from "../../../next.config";
 
 const ActionButtons = () => (
-  <div className="flex flex-wrap gap-y-3">
+  <div className="flex flex-wrap gap-y-3 gap-x-4 mt-6">
     <Link
       href="/#contact"
-      className="px-6 py-4 rounded-full bg-accent hover:scale-105 hover:duration-200 text-textSecondary mr-4 mt-2 lg:mt-5"
+      className="px-8 py-3 rounded-full bg-terracotta text-cream font-semibold shadow-md hover:bg-burntOrange hover:-translate-y-0.5 transition-all duration-200"
     >
       Contact Me
     </Link>
-    <button className="px-6 py-4 rounded-full bg-transparent hover:scale-105 hover:duration-200  text-textPrimary border border-textPrimary mt-2 lg:mt-5">
-      <a href={`${config.basePath}/DeidaLopezResume2026.pdf`}>View Resume</a>
-    </button>
+    <a
+      href={`${config.basePath}/DeidaLopezResume2026.pdf`}
+      className="px-8 py-3 rounded-full bg-transparent border-2 border-cream/70 text-cream font-semibold hover:bg-warmTan/20 hover:-translate-y-0.5 transition-all duration-200"
+    >
+      View Resume
+    </a>
   </div>
 );
 
 const AboutAndButtons = () => (
-  <div className="col-span-5">
-    <p className="text-textPrimary mb-5 sm:text-xl md:text-2xl lg:text-3xl">
+  <div className="col-span-5 mt-6">
+    <p className="text-textPrimary/80 mb-2 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-2xl">
       Software Engineer with expertise developing performant mobile applications
       for iOS and Android devices with React Native.
     </p>
@@ -28,23 +31,21 @@ const AboutAndButtons = () => (
 
 const NameAndSubtitle = () => {
   return (
-    <div className="grid w-full grid-cols-1 gap-12 mx-auto lg:grid-cols-2">
-      <div className="col-span-5 mb-4 lg:mb-10">
-        <h1 className="text-textPrimary text-4xl mb-4 sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-          Deida Lopez
-        </h1>
-        <p className="text-textPrimary text-lg sm:text-xl md:text-2xl lg:text-4xl">
-          Software Engineer, React Native | React
-        </p>
-      </div>
+    <div className="w-full">
+      <h1 className="font-heading text-textPrimary mb-3">
+        Deida Lopez
+      </h1>
+      <p className="text-sage text-lg sm:text-xl md:text-2xl font-sans tracking-wide">
+        Software Engineer, React Native | React
+      </p>
     </div>
   );
 };
 
 const HeroSection = () => {
   return (
-    <section className="py-5">
-      <div className="relative items-center w-full py-12 mx-auto  max-w-8xl">
+    <section className="pt-24 pb-20">
+      <div className="relative w-full max-w-5xl">
         <NameAndSubtitle />
         <AboutAndButtons />
       </div>

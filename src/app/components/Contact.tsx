@@ -9,29 +9,29 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-accent mx-auto md:px-8 py-8 px-8 flex justify-between flex-wrap"
+      className="bg-forestGreen border-t border-warmTan/25 mx-auto md:px-8 py-10 px-8 flex justify-between flex-wrap gap-6"
     >
       <div>
-        <h4 className="text-xl font-bold text-textPrimary my-2">
+        <h4 className="font-heading text-xl font-semibold text-cream mb-2">
           Get in touch!
         </h4>
-        <p className="text-textPrimary mb-4 max-w-md">
+        <p className="text-cream/70 mb-4 max-w-md">
           I&apos;m looking for new opportunities and would love to hear from
           you!
         </p>
         <a
           href="mailto:deida.tech@gmail.com"
-          className="text-textPrimary underline hover:opacity-70"
+          className="text-terracotta hover:text-burntOrange transition-colors duration-200 hover:underline"
         >
-          Shoot me an email
+          Shoot me an email →
         </a>
       </div>
       <div className="socials flex flex-row gap-5 self-end">
-        <Link href={githubLink}>
-          <FaGithub className="w-10 h-10" />
+        <Link href={githubLink} className="text-cream/60 hover:text-terracotta transition-colors duration-200">
+          <FaGithub className="w-9 h-9" />
         </Link>
-        <Link href={linkedinLink}>
-          <FaLinkedin href="linkedin.com" className="w-10 h-10" />
+        <Link href={linkedinLink} className="text-cream/60 hover:text-terracotta transition-colors duration-200">
+          <FaLinkedin className="w-9 h-9" />
         </Link>
       </div>
     </section>

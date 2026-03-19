@@ -73,22 +73,22 @@ const skillsItems: SkillItemType[] = [
 
 const SkillItem = ({ title, icon }: SkillItemType) => {
   return (
-    <div className="border p-2 rounded bg-accent flex flex-col justify-center items-center hover:scale-105 transition-transform duration-200">
-      <div className="my-1">{icon}</div>
-      <h3 className="sm:text-sm lg:text-lg font-bold tracking-wide">{title}</h3>
+    <div className="border border-warmTan/35 p-3 rounded-xl bg-surface flex flex-col justify-center items-center gap-2 hover:border-terracotta hover:bg-charcoal/50 transition-all duration-200 cursor-default">
+      <div className="text-sage">{icon}</div>
+      <h3 className="text-sm lg:text-base font-semibold tracking-wide text-textPrimary">{title}</h3>
     </div>
   );
 };
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="pb-10">
+    <section id="skills" className="pb-16">
       <div>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10">
+        <h2 className="font-heading text-textPrimary font-bold mb-10">
           Skills
         </h2>
       </div>
-      <div className="grid grid-cols-3 gap-4 lg:mx-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 lg:mx-4">
         {skillsItems.map((item) => (
           <SkillItem key={item.title} title={item.title} icon={item.icon} />
         ))}
