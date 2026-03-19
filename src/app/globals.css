@@ -3,47 +3,67 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  /* Core palette */
+  --color-forest-green: #1B4D3E;
+  --color-terracotta: #C84B31;
+  --color-cream: #F5EDE4;
+  --color-charcoal: #2A2A2A;
+  --color-sage: #7B9E89;
+  --color-burnt-orange: #B85C2A;
+  --color-warm-tan: #D4C4B0;
 
-  /* --color-accent: #afbb2b; */
-  --color-accent: #84a326;
-  --color-accent-secondary: #f5f6de;
-  /* --color-accent-secondary: #f56b09; */
-  /* --color-accent-secondary: #de5e02; */
-
-  --color-bkg: #f5f6de;
-
-  --color-text: #001107;
-  --color-text-secondary: #f7f7f7;
+  /* Light mode semantic tokens */
+  --color-bkg: #F5EDE4;
+  --color-surface: #EDE3D9;
+  --color-text: #2A2A2A;
+  --color-text-secondary: #1B4D3E;
+  --color-accent: #C84B31;
+  --color-accent-hover: #B85C2A;
+  --color-border: #D4C4B0;
 }
 
 .dark {
-  --color-accent: #0f3616;
-  --color-accent-secondary: #001101;
-
-  --color-bkg: #001101;
-
-  --color-text: #fff;
-  --color-text-secondary: #f9faeb;
+  /* Dark mode semantic tokens */
+  --color-bkg: #1B4D3E;
+  --color-surface: #163D31;
+  --color-text: #F5EDE4;
+  --color-text-secondary: #7B9E89;
+  --color-accent: #C84B31;
+  --color-accent-hover: #B85C2A;
+  --color-border: #D4C4B0;
 }
 
 body {
-  color: #000000;
-  background: #fff;
+  background-color: var(--color-bkg);
+  color: var(--color-text);
+  position: relative;
+}
 
-  /* color: rgb(var(--foreground-rgb)); */
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+/* Subtle paper texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content sits above texture */
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Warm divider utility */
+  .divider-warm {
+    border-color: var(--color-border);
+    opacity: 0.35;
   }
 }
